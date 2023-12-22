@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  php-apache:
+    image: rl-php:7.4
+    container_name: rl-php-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src/index.php:/var/www/html/index.php
